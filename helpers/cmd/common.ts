@@ -15,25 +15,19 @@ export const date = async (args: string[]): Promise<string> => {
 }
 
 export const sudo = async (args?: string[]): Promise<string> => {
-  return `Permission denied: unable to run the command 'undefined' as root.`
+  return `<p style="color: red">Permission denied: unable to run the command 'undefined' as root.</>`
 }
 
 export const hello = async (args?: string[]): Promise<string> => {
   return `
-███╗   ███╗██╗  ██╗████████╗████████╗███████╗██████╗
-████╗ ████║██║  ██║╚══██╔══╝╚══██╔══╝╚════██║╚════██╗
-██╔████╔██║███████║   ██║      ██║       ██╔╝ █████╔╝
-██║╚██╔╝██║╚════██║   ██║      ██║      ██╔╝ ██╔═══╝
-██║ ╚═╝ ██║     ██║   ██║      ██║      ██║  ███████╗
-╚═╝     ╚═╝     ╚═╝   ╚═╝      ╚═╝      ╚═╝  ╚══════╝ v${config.version}
+<h2 style="color: cyan">terminal.me at v${config.version}</h2>
 
 Type 'help' to see list of available commands.
 
 --
 The project is open-source 🎉 type 'repo' to check out the repository.
 
-New 🎉: Try out the new 'theme' command. See all available themes <a href="https://github.com/m4tt72/terminal/tree/master/docs/themes">in the docs</a>.
-New 🎉: New command 'neofetch', for you linux.
+New 🎉: Try out the new 'theme' command. See all available themes <a href="https://github.com/kurt-liao/terminal.me/tree/main/assets/themes" target="_blank">in the docs</a>.
 --
 `
 }
