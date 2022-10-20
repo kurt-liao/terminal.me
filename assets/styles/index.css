@@ -1,0 +1,30 @@
+@font-face {
+  font-family: PixeloidSans;
+  src: url('../fonts/PixeloidSans-nR3g1.ttf');
+}
+
+* {
+  font-family: PixeloidSans, sans-serif;
+}
+
+html,
+body,
+body > div:first-child,
+div#__next,
+div#__next > div {
+  height: 100%;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: underline;
+}
