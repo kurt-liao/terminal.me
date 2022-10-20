@@ -22,10 +22,14 @@ export const hello = async (args?: string[]): Promise<string> => {
   return `
 <h2 style="color: cyan">terminal.me at v${config.version}</h2>
 
-Type 'help' to see list of available commands.
+<p>Welcome to my interactive website.</p>
+<p>It's the terminal like site let you type some commands to interact with me.😁</p>
+
+Type 'man' to see list of available commands.
 
 --
 The project is open-source 🎉 type 'repo' to check out the repository.
+If you think it's interesting, follow me on <a href="${config.githubUrl}" target="_blank">Github</a> and also give it a <span style="color: yellow">STAR</span>, please😇
 
 New 🎉: Try out the new 'theme' command. See all available themes <a href="https://github.com/kurt-liao/terminal.me/tree/main/assets/themes" target="_blank">in the docs</a>.
 --

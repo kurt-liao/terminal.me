@@ -40,9 +40,6 @@ const execCommand = async () => {
 
   switch (_cmd) {
     case 'theme':
-      // if (args.length === 1) {
-      //   theme.setTheme(args[0])
-      // }
       const output = await cmd.theme(args, theme.setTheme)
       setHistory(output, false)
       break
@@ -75,6 +72,10 @@ watchEffect(() => {
   if (!init.value) {
     execCommand()
   }
+})
+
+watchEffect(() => {
+  setCommand('hello')
 })
 
 provide<ShellContext>(
