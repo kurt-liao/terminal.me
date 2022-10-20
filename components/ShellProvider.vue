@@ -14,7 +14,7 @@ const setCommand = (_command: string) => {
   init.value = false
 }
 
-const setHistory = (output: string) => {
+const setHistory = (output: string, isError: boolean) => {
   histories.value = [
     ...histories.value,
     {
@@ -22,6 +22,7 @@ const setHistory = (output: string) => {
       date: new Date(),
       command: command.value.split(' ').slice(1).join(' '),
       output,
+      isError,
     },
   ]
 }
@@ -39,26 +40,31 @@ const execCommand = async () => {
 
   switch (_cmd) {
     case 'theme':
-      if (args.length === 1) {
-        theme.setTheme(args[0])
-      }
+      // if (args.length === 1) {
+      //   theme.setTheme(args[0])
+      // }
+      const output = await cmd.theme(args, theme.setTheme)
+      setHistory(output, false)
       break
     case 'clear':
       clearHistories()
       break
     case '':
-      setHistory('')
+      setHistory('', false)
       break
     default:
       if (Object.keys(cmd).indexOf(_cmd) === -1) {
-        setHistory(`Command not found: ${_cmd}. Try 'help' to get started.`)
+        setHistory(
+          `Command not found: ${_cmd}. Try 'man' to get started.`,
+          true,
+        )
       } else {
         try {
           const output = await cmd[_cmd](args)
 
-          setHistory(output)
+          setHistory(output, false)
         } catch (error: any) {
-          setHistory(`Exception occured: ${error.message}`)
+          setHistory(`Exception occured: ${error.message}`, true)
         }
       }
       break

@@ -1,3 +1,3 @@
 export * from './common'
-export * from './about'
-export * from './github'
+export * from './profile'
+export * from './theme'

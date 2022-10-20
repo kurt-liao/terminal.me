@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const shell: ShellContext | undefined = inject('shell')!
+import { ThemeContext } from '~~/types/theme'
+
+const shell: ShellContext = inject('shell')
+const theme: ThemeContext = inject('theme')
 </script>
 
 <template>
@@ -13,7 +16,10 @@ const shell: ShellContext | undefined = inject('shell')!
 
     <p
       class="whitespace-pre-wrap mb-2"
-      style="line-height: normal"
+      :style="{
+        lineHeight: 'normal',
+        color: history.isError ? theme.theme.red : theme.theme.foreground,
+      }"
       v-html="history.output"
     ></p>
   </div>

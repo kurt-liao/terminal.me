@@ -3,4 +3,5 @@ export interface History {
   date: Date
   command: string
   output: string
+  isError: boolean
 }
