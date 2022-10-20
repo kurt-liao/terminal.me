@@ -1,12 +1,5 @@
 {
-  "builds": [
-    {
-      "src": "nuxt.config.ts",
-      "config": {
-        "tscOptions": {
-          "sourceMap": false
-        }
-      }
-    }
-  ]
+  "github": {
+    "silent": true
+  }
 }
