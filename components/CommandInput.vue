@@ -3,11 +3,23 @@ import { checkCommand } from '~/helpers/checkCommand'
 import { tabCompletion } from '~/helpers/tabCompletion'
 import { ThemeContext } from '~~/types/theme'
 
+const props = defineProps(['containerRef'])
+
 const input = ref('')
 const inputRef = ref<HTMLFormElement>()
 
 const theme: ThemeContext = inject('theme')
-const shell: ShellContext = inject('shell')!
+const shell: ShellContext = inject('shell')
+
+watchEffect(() => {
+  if (
+    shell.histories &&
+    props.containerRef &&
+    props.containerRef.scrollHeight
+  ) {
+    props.containerRef.scrollTo(0, props.containerRef.scrollHeight)
+  }
+})
 
 const onKeyDown = (e: KeyboardEvent) => {
   const key = e.key
