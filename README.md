@@ -92,5 +92,5 @@ All available themes defined in `/assets/themes.json` [link to file](/assets/the
 Themes color reference from [here](https://gogh-co.github.io/Gogh/)
 ## Contributing
 
-Any of contribution is welcome.
+Any of contribution(PR, Issue...) is welcome.
 
