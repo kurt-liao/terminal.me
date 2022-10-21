@@ -6,7 +6,8 @@
     "dev": "nuxi dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "lint": "prettier -w ."
+    "lint": "prettier -w .",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
