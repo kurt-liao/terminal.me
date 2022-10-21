@@ -10,3 +10,8 @@ export const getStats = async () => {
   const { data } = await axios.get(`${config.statsUrl}`)
   return data
 }
+
+export const getRecentPosts = async () => {
+  const { data } = await axios.get(`${config.postsUrl}`)
+  return data
+}
