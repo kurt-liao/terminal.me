@@ -28,4 +28,9 @@ div#__next > div {
 
 a {
   text-decoration: underline;
+  font-weight: 700;
+}
+
+a:hover {
+  font-size: 1.5rem;
 }

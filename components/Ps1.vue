@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { Theme } from '~~/types/theme'
+import { Theme } from '~/types/theme'
+import config from '~/assets/config.json'
 
 const theme: Theme | undefined = inject('theme')
-const hostname = ref('kurt@me')
+const hostname = ref(config.host || '')
 
 watchEffect(() => {
   if (!process.server) {
