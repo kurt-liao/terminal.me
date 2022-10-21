@@ -31,8 +31,7 @@ export const repo = async (): Promise<string> => {
 }
 
 export const articles = async (): Promise<string> => {
-  return `<a target="_blank" href="https://medium-story.vercel.app/api?username=@s09001&is_link=true"><img src="https://medium-story.vercel.app/api?username=@s09001"></a>
-
-  <a target="_blank" href="https://medium-story.vercel.app/api?username=@s09001&index=1&is_link=true"><img src="https://medium-story.vercel.app/api?username=@s09001&index=1"></a>
-  `
+  return `
+  <p style="font-size: 1.2rem;margin-bottom: 10px;">My recently posts on <a href="${config.blogUrl}" target="_blank">blog</p><div style="display: flex"><a style="display: block; margin-right: 1em;"target="_blank" href="https://medium-story.vercel.app/api?username=@s09001&is_link=true"><img src="https://medium-story.vercel.app/api?username=@s09001"></a>
+  <a style="display: block" target="_blank" href="https://medium-story.vercel.app/api?username=@s09001&index=1&is_link=true"><img src="https://medium-story.vercel.app/api?username=@s09001&index=1"></a></div>`
 }

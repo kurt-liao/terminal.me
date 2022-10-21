@@ -1,7 +1,7 @@
 export const cmdWtihDescription = (): string[] => {
   return [
     'man:      \tList all available commands.',
-    'hello:    \t\tDisplay welcome words for you.',
+    'hello:    \t\tDisplay welcome slogan to you.',
     'repo:     \tOpen this repository in new tab.',
     'clear:    \tClear all output histories.',
     'date:     \tShow current datetime.',
