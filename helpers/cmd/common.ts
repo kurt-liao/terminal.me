@@ -20,7 +20,7 @@ export const date = async (args: string[]): Promise<string> => {
 }
 
 export const sudo = async (args?: string[]): Promise<string> => {
-  return `<p style="color: red">Permission denied: unable to run the command 'undefined' as root.</>`
+  return `<p style="color: #db2d20">Permission denied: unable to run the command 'undefined' as root.</>`
 }
 
 export const hello = async (args?: string[]): Promise<string> => {
