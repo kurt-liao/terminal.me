@@ -21,7 +21,7 @@ export interface Theme {
   cursorColor: string
 }
 
-export type ThemeContext = Reactive<{
+export type ThemeContext = {
   theme: Ref<Theme>
   setTheme: (themeName: string) => void
-}>
+}

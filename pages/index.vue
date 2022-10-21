@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ThemeContext } from '~~/types/theme'
 
-const theme: ThemeContext = inject('theme')
+const { theme }: ThemeContext = inject('theme')
 
 const inputRef = ref()
 const containerRef = ref()
@@ -15,7 +15,7 @@ const focusInput = () => {
   <div
     class="overflow-hidden h-full rounded"
     :style="{
-      borderColor: theme.theme?.yellow,
+      borderColor: theme.yellow,
       padding: '16px',
       borderWidth: '2px',
     }"

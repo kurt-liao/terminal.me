@@ -7,7 +7,7 @@ const init = ref(true)
 const histories = ref<Array<History>>([])
 const command = ref('')
 const lastCommandIndex = ref(0)
-const theme: ThemeContext = inject('theme')
+const { theme, setTheme } = inject('theme')
 
 const setCommand = (_command: string) => {
   command.value = [Date.now(), _command].join(' ')
@@ -40,7 +40,7 @@ const execCommand = async () => {
 
   switch (_cmd) {
     case 'theme':
-      const output = await cmd.theme(args, theme.setTheme)
+      const output = await cmd.theme(args, setTheme)
       setHistory(output, false)
       break
     case 'clear':

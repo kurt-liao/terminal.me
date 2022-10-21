@@ -3,7 +3,6 @@ useHead({
   htmlAttrs: {
     lang: 'en',
   },
-  charset: 'utf-8',
   title: 'Kurt.me',
   meta: [
     {

@@ -8,7 +8,7 @@ const props = defineProps(['containerRef'])
 const input = ref('')
 const inputRef = ref<HTMLFormElement>()
 
-const theme: ThemeContext = inject('theme')
+const { theme }: ThemeContext = inject('theme')
 const shell: ShellContext = inject('shell')
 
 watchEffect(() => {
@@ -67,8 +67,8 @@ defineExpose({ focus })
       class="focus:outline-none flex-grow"
       aria-label="prompt"
       :style="{
-        backgroundColor: theme.theme.background,
-        color: checkCommand(input) ? theme.theme.green : theme.theme.red,
+        backgroundColor: theme.background,
+        color: checkCommand(input) ? theme.green : theme.red,
       }"
       autofocus
       @keydown="onKeyDown"

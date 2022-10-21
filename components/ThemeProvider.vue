@@ -1,21 +1,38 @@
 <script setup lang="ts">
-import { useTheme } from '~/helpers/hooks/useTheme'
+import Themes from '~/assets/themes.json'
+import config from '~/assets/config.json'
+import { findTheme } from '~/helpers/findTheme'
+import { ThemeContext } from '~/types/theme'
 
-const [theme, setTheme] = useTheme()
+const theme = ref((config.theme && findTheme(config.theme)) || Themes[0])
 
-watchEffect(async () => {
-  await nextTick(() => {})
+const setTheme = (themeName: string) => {
+  const index = Themes.findIndex((_theme) => {
+    return _theme.name.toLowerCase() === themeName.toLowerCase()
+  })
 
+  if (index === -1) {
+    return `Theme '${themeName}' is not exists. Try 'theme ls' to list available themes.`
+  }
+  theme.value = Themes[index]
+
+  if (!process.server) localStorage.setItem('theme', themeName)
+
+  nextTick(() => {})
+}
+
+// setTheme after mounted
+onMounted(() => {
   if (!process.server) {
-    const savedTheme = await localStorage.getItem('theme')
+    const savedTheme = localStorage.getItem('theme')
 
     if (savedTheme) {
-      await setTheme(savedTheme)
+      setTheme(savedTheme)
     }
   }
 })
 
-provide('theme', reactive({ theme, setTheme }))
+provide('theme', { theme, setTheme } as ThemeContext)
 </script>
 
 <template>
