@@ -1,8 +1,10 @@
 import Themes from '~/assets/themes.json'
-import { ThemeContext } from '~~/types/theme'
+import { ThemeContext } from '~/types/theme'
+import config from '~/assets/config.json'
+import { findTheme } from '~/helpers/findTheme'
 
 export const useTheme = (): ThemeContext => {
-  const theme = ref(Themes[0])
+  const theme = ref((config.theme && findTheme(config.theme)) || Themes[0])
 
   const setTheme = async (themeName: string) => {
     const index = Themes.findIndex((_theme) => {

@@ -89,6 +89,7 @@ I put all config in `/assets/config.json` [lnik to file](/assets/config.jso). Yo
 
 All available themes defined in `/assets/themes.json` [link to file](/assets/themes.json).
 
+Themes color reference from [here](https://gogh-co.github.io/Gogh/)
 ## Contributing
 
 Any of contribution is welcome.
