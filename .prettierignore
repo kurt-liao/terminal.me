@@ -8,3 +8,4 @@ node_modules
 dist
 *.json
 pnpm-lock.yaml
+README.md
