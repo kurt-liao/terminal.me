@@ -25,6 +25,10 @@ const onKeyDown = (e: KeyboardEvent) => {
   const key = e.key
   const code = e.code
 
+  const commands = shell.histories
+    .map(({ command }) => command)
+    .filter((value: string) => value)
+
   if (key === 'Tab') {
     e.preventDefault()
     const result = tabCompletion(input.value)
@@ -44,6 +48,35 @@ const onKeyDown = (e: KeyboardEvent) => {
       shell?.clearHistories()
     } else if (key === 'c') {
       shell?.setCommand('')
+    }
+  }
+
+  if (key === 'ArrowUp') {
+    e.preventDefault()
+
+    if (!commands.length) return
+
+    const idx = shell.lastCommandIndex + 1
+
+    if (idx <= commands.length) {
+      shell.setLastCommandIndex(idx)
+      input.value = commands[commands.length - idx]
+    }
+  }
+
+  if (key === 'ArrowDown') {
+    e.preventDefault()
+
+    if (!commands.length) return
+
+    const idx = shell.lastCommandIndex - 1
+
+    if (idx > 0) {
+      shell.setLastCommandIndex(idx)
+      input.value = commands[commands.length - idx]
+    } else {
+      shell.setLastCommandIndex(0)
+      input.value = ''
     }
   }
 }
@@ -68,7 +101,7 @@ defineExpose({ focus })
       aria-label="prompt"
       :style="{
         backgroundColor: theme.background,
-        color: checkCommand(input) ? theme.green : theme.red,
+        color: checkCommand(input) || input === '' ? theme.green : theme.red,
       }"
       autofocus
       @keydown="onKeyDown"

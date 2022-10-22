@@ -26,13 +26,14 @@ export const sudo = async (args?: string[]): Promise<string> => {
 export const hello = async (args?: string[]): Promise<string> => {
   return `
 <div style="color: #00DC82;">
-
-██╗  ██╗██╗   ██╗██████╗ ████████╗    ██╗          ██╗  █████╗       ██████
-██║ ██╔╝██║   ██║██╔══██ ╚══██╔══╝    ██║          ██║  ██╔══██╗   ██╔═██╗
-█████╔╝ ██║   ██║██████╔╝   ██║         ██║           ██║  ███  ████║██║   ██║
-██╔═██╗ ██║   ██║██╔══██╗   ██║         ██║           ██║  ██╔══  ██║██║   ██║
-██║  ██╗╚██████╔╝██║  ██║   ██║         ███████╗  ██║ ██║     ██║╚█████╔╝
-╚═╝  ╚═╝ ╚═════╝   ╚═╝╚═╝   ╚═╝         ╚══════╝  ╚═╝ ╚═╝     ╚═╝ ╚════╝ 
+<pre>
+██╗  ██╗██╗   ██╗██████╗ ████████╗    ██╗     ██╗ █████╗  ██████╗ 
+██║ ██╔╝██║   ██║██╔══██╗╚══██╔══╝    ██║     ██║██╔══██╗██╔═══██╗
+█████╔╝ ██║   ██║██████╔╝   ██║       ██║     ██║███████║██║   ██║
+██╔═██╗ ██║   ██║██╔══██╗   ██║       ██║     ██║██╔══██║██║   ██║
+██║  ██╗╚██████╔╝██║  ██║   ██║       ███████╗██║██║  ██║╚██████╔╝
+╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝       ╚══════╝╚═╝╚═╝  ╚═╝ ╚═════╝ 
+</pre>
 </div>
 <div style="font-size: 1.2rem;">
 <div style="color: #53E8AA;">
@@ -44,9 +45,7 @@ export const hello = async (args?: string[]): Promise<string> => {
 <p style="color: #aceace">
 The project is open-source 🎉 type 'repo' to check out the repository.
 
-If you think it's interesting, follow <a href="${config.githubUrl}" target="_blank">Me</a>, check out the <a href="https://github.com/kurt-liao/terminal.me">Repo</a> and also give it a <a href="https://github.com/kurt-liao/terminal.me/stargazers" target="_blank"><span style="color: yellow">STAR</span></a>, please😇
-
-New 🎉: Try out the new 'theme' command. See all available themes <a href="https://github.com/kurt-liao/terminal.me/tree/main/assets/themes.json" target="_blank">in the docs</a>.
+If you like it, follow <a href="${config.githubUrl}" target="_blank">Me</a>, check out the <a href="https://github.com/kurt-liao/terminal.me">Repo</a> and also give it a <a href="https://github.com/kurt-liao/terminal.me/stargazers" target="_blank"><span style="color: yellow">STAR</span></a>, please😇
 </p>
 --
 </div>
