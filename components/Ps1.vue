@@ -6,7 +6,7 @@ const theme: Theme | undefined = inject('theme')
 const hostname = ref(config.host || '')
 
 watchEffect(() => {
-  if (!process.server) {
+  if (process.client) {
     hostname.value = window.location.hostname
   }
 })

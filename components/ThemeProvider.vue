@@ -16,14 +16,14 @@ const setTheme = (themeName: string) => {
   }
   theme.value = Themes[index]
 
-  if (!process.server) localStorage.setItem('theme', themeName)
+  if (process.client) localStorage.setItem('theme', themeName)
 
   nextTick(() => {})
 }
 
 // setTheme after mounted
 onMounted(() => {
-  if (!process.server) {
+  if (process.client) {
     const savedTheme = localStorage.getItem('theme')
 
     if (savedTheme) {
