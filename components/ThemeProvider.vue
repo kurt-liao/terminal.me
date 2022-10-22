@@ -18,7 +18,7 @@ const setTheme = (themeName: string) => {
 
   if (process.client) localStorage.setItem('theme', themeName)
 
-  nextTick(() => {})
+  return `Set theme '${themeName}' successfully!`
 }
 
 // setTheme after mounted

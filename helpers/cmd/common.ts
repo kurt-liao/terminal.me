@@ -8,7 +8,7 @@ export const man = async (args: string[]): Promise<string> => {
     .map((cmd) => `${cmd}\n`)
     .join(
       '',
-    )}\n\n===========Other commands============\n[tab]\t trigger completion.\n[ctrl+l] clear terminal.\n[ctrl+c] cancel command.`
+    )}\n\n===========Other commands============\n[tab]\t trigger completion.\n[ctrl+l] clear terminal.\n[ctrl+c] cancel command.\n[ArrowUp] recall previously-enterd command\n[ArrowDown] call next-enterd command`
 }
 
 export const echo = async (args: string[]): Promise<string> => {

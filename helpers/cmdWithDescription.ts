@@ -11,8 +11,8 @@ export const cmdWtihDescription = (): string[] => {
     'github:   \tOpen my github profile in new tab.',
     'blog:     \t\tOpen my blog in new tab.',
     'resume:   \tOpen my resume in new tab.',
-    'articles: \tDisplay my recently post on terminal from blog.',
+    'posts:    \tDisplay my latest posts on terminal from blog.',
     'stats:    \tDisplay some of my stats on terminal.',
-    'sudo:     \tI have no idea, just try it😜',
+    'sudo:     \tI have no idea. Just try it😜',
   ]
 }

@@ -30,6 +30,6 @@ export const repo = async (): Promise<string> => {
   return launchUrl(config.repoUrl, 'repository')
 }
 
-export const articles = async (): Promise<string> => {
+export const posts = async (): Promise<string> => {
   return await getRecentPosts()
 }

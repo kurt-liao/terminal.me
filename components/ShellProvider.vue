@@ -7,7 +7,11 @@ const init = ref(true)
 const histories = ref<Array<History>>([])
 const command = ref('')
 const lastCommandIndex = ref(0)
-const { theme, setTheme } = inject('theme')
+const {
+  theme,
+  setTheme,
+}: { theme: ThemeContext; setTheme: (themeName: string) => string } =
+  inject('theme')
 
 const setCommand = (_command: string) => {
   command.value = [Date.now(), _command].join(' ')

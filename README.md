@@ -83,13 +83,13 @@ node .output/server/index.mjs
 
 ## Configuration
 
-I put all config in `/assets/config.json` [lnik to file](/assets/config.jso). You can modify it to fit your needs.
+I put all config in [/assets/config.json](/assets/config.jso). You can modify it to fit your needs.
 
 ## Themes
 
-All available themes defined in `/assets/themes.json` [link to file](/assets/themes.json).
+All available themes defined in [/assets/themes.json](/assets/themes.json).
 
-Themes color reference from [here](https://gogh-co.github.io/Gogh/)
+Themes color reference from [here](https://gogh-co.github.io/Gogh/).
 ## Contributing
 
 Any of contribution(PR, Issue...) is welcome.
