@@ -83,7 +83,7 @@ node .output/server/index.mjs
 
 ## Configuration
 
-I put all config in [/assets/config.json](/assets/config.jso). You can modify it to fit your needs.
+I put all config in [/assets/config.json](/assets/config.json). You can modify it to fit your needs.
 
 ## Themes
 
