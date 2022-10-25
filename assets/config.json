@@ -1,12 +1,12 @@
 {
   "host": "me.kurtstories.com",
   "theme": "ura",
-  "profileUrl": "https://raw.githubusercontent.com/kurt-liao/terminal.me/files/README.html?timestamp=1666277681",
-  "statsUrl": "https://raw.githubusercontent.com/kurt-liao/terminal.me/files/STATS.html?timestamp=1666277681",
+  "profileUrl": "https://raw.githubusercontent.com/kurt-liao/terminal.me.files/main/README.html?timestamp=1666277681",
+  "statsUrl": "https://raw.githubusercontent.com/kurt-liao/terminal.me.files/main/STATS.html?timestamp=1666277681",
   "githubUrl": "https://github.com/kurt-liao",
   "blogUrl": "https://blog.kurtstories.com",
   "resumeUrl": "https://resume.kurtstories.com",
   "linkedinUrl": "https://www.linkedin.com/in/kurt-liao-07360b17b/",
   "repoUrl": "https://github.com/kurt-liao/terminal.me",
-  "postsUrl": "https://raw.githubusercontent.com/kurt-liao/terminal.me/files/POSTS.html?timestamp=1666277681"
+  "postsUrl": "https://raw.githubusercontent.com/kurt-liao/terminal.me.files/main/POSTS.html?timestamp=1666277681"
 }
