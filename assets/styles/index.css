@@ -1,6 +1,7 @@
 @font-face {
   font-family: PixeloidSans;
   src: url('../fonts/PixeloidSans-nR3g1.ttf');
+  font-display: swap;
 }
 
 * {
