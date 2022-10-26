@@ -108,6 +108,7 @@ defineExpose({ focus })
       autocomplete="off"
       autocorrect="off"
       autocapitalize="off"
+      spellcheck="false"
     />
   </div>
 </template>
