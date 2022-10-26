@@ -1,9 +1,8 @@
 <script setup>
-if (process.client) {
+if (process.client)
   watchEffect(() => clearError({ redirect: '/' }))
-}
 </script>
 
 <template>
-  <div></div>
+  <div />
 </template>

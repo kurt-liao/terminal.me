@@ -17,22 +17,28 @@ Example:
   }
 
   switch (args[0]) {
-    case 'ls':
+    case 'ls': {
       let result = 'Here are available themes: \n'
       result += '['
-      result += Themes.map((theme) => theme.name.toLowerCase()).join(', ')
+      result += Themes.map(theme => theme.name.toLowerCase()).join(', ')
       result += ']'
       result += '\n\n'
-      result += `You can preview all these themes <a target="_blank" href="https://github.com/kurt-liao/terminal.me/tree/main/assets/themes.json">in the docs</a>`
+      result += 'You can preview all these themes <a target="_blank" href="https://github.com/kurt-liao/terminal.me/tree/main/assets/themes.json">in the docs</a>'
 
       return result
-    case 'set':
+    }
+    case 'set': {
       const selectedTheme = args[1]
 
       return callback(selectedTheme)
-    case 'random':
+    }
+    case 'random': {
       const randomTheme = Themes[Math.floor(Math.random() * Themes.length)]
 
       return callback(randomTheme.name.toLowerCase())
+    }
+    default: {
+      return 'This option is not exist in theme command. Type \'theme\' to see what options you can use.'
+    }
   }
 }

@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import { Theme } from '~/types/theme'
+import type { Theme } from '~/types/theme'
 import config from '~/assets/config.json'
 
 const theme: Theme | undefined = inject('theme')
 const hostname = ref(config.host || '')
 
 watchEffect(() => {
-  if (process.client) {
+  if (process.client)
     hostname.value = window.location.hostname
-  }
 })
 </script>
 

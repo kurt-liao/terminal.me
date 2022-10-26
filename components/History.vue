@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ThemeContext } from '~~/types/theme'
+import type { ThemeContext } from '~~/types/theme'
 
 const shell: ShellContext = inject('shell')
 const theme: ThemeContext = inject('theme')
@@ -11,7 +11,9 @@ const theme: ThemeContext = inject('theme')
       <div class="flex-shrink">
         <Ps1 />
       </div>
-      <div class="flex-grow">{{ history.command }}</div>
+      <div class="flex-grow">
+        {{ history.command }}
+      </div>
     </div>
 
     <p
@@ -21,6 +23,6 @@ const theme: ThemeContext = inject('theme')
         color: history.isError ? theme.theme.red : theme.theme.foreground,
       }"
       v-html="history.output"
-    ></p>
+    />
   </div>
 </template>

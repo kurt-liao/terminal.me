@@ -1,11 +1,10 @@
-import * as cmd from '../cmd'
 import config from '~/assets/config.json'
 import { cmdWtihDescription } from '~/helpers/cmdWithDescription'
 
-export const man = async (args: string[]): Promise<string> => {
+export const man = async (): Promise<string> => {
   const commands = cmdWtihDescription()
   return `You can use following commands: \n\n${commands
-    .map((cmd) => `${cmd}\n`)
+    .map(cmd => `${cmd}\n`)
     .join(
       '',
     )}\n\n===========Other commands============\n[tab]\t trigger completion.\n[ctrl+l] clear terminal.\n[ctrl+c] cancel command.\n[ArrowUp] recall previously-enterd command\n[ArrowDown] call next-enterd command`
@@ -15,15 +14,15 @@ export const echo = async (args: string[]): Promise<string> => {
   return args.join(' ')
 }
 
-export const date = async (args: string[]): Promise<string> => {
+export const date = async (): Promise<string> => {
   return new Date().toString()
 }
 
-export const sudo = async (args?: string[]): Promise<string> => {
-  return `<p style="color: #db2d20">Permission denied: unable to run the command 'undefined' as root.</>`
+export const sudo = async (): Promise<string> => {
+  return '<p style="color: #db2d20">Permission denied: unable to run the command \'undefined\' as root.</>'
 }
 
-export const hello = async (args?: string[]): Promise<string> => {
+export const hello = async (): Promise<string> => {
   return `
 <div style="color: #00DC82;">
 <pre>

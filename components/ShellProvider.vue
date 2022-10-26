@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import * as cmd from '~/helpers/cmd'
-import { History } from '~~/types/history'
-import { ThemeContext } from '~~/types/theme'
+import type { History } from '~~/types/history'
+import type { ThemeContext } from '~~/types/theme'
 
 const init = ref(true)
 const histories = ref<Array<History>>([])
@@ -10,8 +10,8 @@ const lastCommandIndex = ref(0)
 const {
   theme,
   setTheme,
-}: { theme: ThemeContext; setTheme: (themeName: string) => string } =
-  inject('theme')
+}: { theme: ThemeContext; setTheme: (themeName: string) => string }
+  = inject('theme')
 
 const setCommand = (_command: string) => {
   command.value = [Date.now(), _command].join(' ')
@@ -43,39 +43,44 @@ const execCommand = async () => {
   const [_cmd, ...args] = command.value.split(' ').slice(1)
 
   switch (_cmd) {
-    case 'theme':
+    case 'theme': {
       const output = await cmd.theme(args, setTheme)
       setHistory(output, false)
       break
-    case 'clear':
+    }
+    case 'clear': {
       clearHistories()
       break
-    case '':
+    }
+    case '': {
       setHistory('', false)
       break
-    default:
-      if (Object.keys(cmd).indexOf(_cmd) === -1) {
+    }
+    default: {
+      if (!Object.keys(cmd).includes(_cmd)) {
         setHistory(
           `Command not found: ${_cmd}. Try 'man' to get started.`,
           true,
         )
-      } else {
+      }
+      else {
         try {
           const output = await cmd[_cmd](args)
 
           setHistory(output, false)
-        } catch (error: any) {
+        }
+        catch (error: any) {
           setHistory(`Exception occured: ${error.message}`, true)
         }
       }
       break
+    }
   }
 }
 
 watchEffect(() => {
-  if (!init.value) {
+  if (!init.value)
     execCommand()
-  }
 })
 
 watchEffect(() => {

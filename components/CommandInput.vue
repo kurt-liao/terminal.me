@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { checkCommand } from '~/helpers/checkCommand'
 import { tabCompletion } from '~/helpers/tabCompletion'
-import { ThemeContext } from '~~/types/theme'
+import type { ThemeContext } from '~~/types/theme'
 
 const props = defineProps(['containerRef'])
 
@@ -13,12 +13,11 @@ const shell: ShellContext = inject('shell')
 
 watchEffect(() => {
   if (
-    shell.histories &&
-    props.containerRef &&
-    props.containerRef.scrollHeight
-  ) {
+    shell.histories
+    && props.containerRef
+    && props.containerRef.scrollHeight
+  )
     props.containerRef.scrollTo(0, props.containerRef.scrollHeight)
-  }
 })
 
 const onKeyDown = (e: KeyboardEvent) => {
@@ -32,7 +31,8 @@ const onKeyDown = (e: KeyboardEvent) => {
   if (key === 'Tab') {
     e.preventDefault()
     const result = tabCompletion(input.value)
-    if (result) input.value = result
+    if (result)
+      input.value = result
   }
 
   if (key === 'Enter' || code === '13') {
@@ -46,7 +46,8 @@ const onKeyDown = (e: KeyboardEvent) => {
     if (key === 'l') {
       e.preventDefault()
       shell?.clearHistories()
-    } else if (key === 'c') {
+    }
+    else if (key === 'c') {
       shell?.setCommand('')
     }
   }
@@ -54,7 +55,8 @@ const onKeyDown = (e: KeyboardEvent) => {
   if (key === 'ArrowUp') {
     e.preventDefault()
 
-    if (!commands.length) return
+    if (!commands.length)
+      return
 
     const idx = shell.lastCommandIndex + 1
 
@@ -67,14 +69,16 @@ const onKeyDown = (e: KeyboardEvent) => {
   if (key === 'ArrowDown') {
     e.preventDefault()
 
-    if (!commands.length) return
+    if (!commands.length)
+      return
 
     const idx = shell.lastCommandIndex - 1
 
     if (idx > 0) {
       shell.setLastCommandIndex(idx)
       input.value = commands[commands.length - idx]
-    } else {
+    }
+    else {
       shell.setLastCommandIndex(0)
       input.value = ''
     }
@@ -89,13 +93,13 @@ defineExpose({ focus })
 </script>
 
 <template>
-  <label for="prompt" class="flex-shrink"></label>
+  <label for="prompt" class="flex-shrink" />
   <div class="flex flex-row space-x-2">
     <Ps1 />
     <input
-      v-model="input"
-      ref="inputRef"
       id="prompt"
+      ref="inputRef"
+      v-model="input"
       type="text"
       class="focus:outline-none flex-grow"
       aria-label="prompt"
@@ -104,11 +108,11 @@ defineExpose({ focus })
         color: checkCommand(input) || input === '' ? theme.green : theme.red,
       }"
       autofocus
-      @keydown="onKeyDown"
       autocomplete="off"
       autocorrect="off"
       autocapitalize="off"
       spellcheck="false"
-    />
+      @keydown="onKeyDown"
+    >
   </div>
 </template>

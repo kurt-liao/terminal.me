@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ThemeContext } from '~/types/theme'
+import type { ThemeContext } from '~/types/theme'
 
 const { theme }: ThemeContext = inject('theme')
 </script>
 
 <template>
   <main class="w-full h-full p-2" :style="{ background: theme?.background }">
-    <slot></slot>
+    <slot />
   </main>
 </template>

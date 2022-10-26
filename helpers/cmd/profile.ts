@@ -1,5 +1,5 @@
-import { getProfile, getRecentPosts, getStats } from '~/api'
 import { launchUrl } from '../launchUrl'
+import { getProfile, getRecentPosts, getStats } from '~/api'
 import config from '~/assets/config.json'
 
 export const about = async (): Promise<string> => {

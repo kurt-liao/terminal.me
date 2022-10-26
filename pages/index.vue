@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ThemeContext } from '~~/types/theme'
+import type { ThemeContext } from '~~/types/theme'
 
 const { theme }: ThemeContext = inject('theme')
 
@@ -21,7 +21,7 @@ const focusInput = () => {
     }"
     @click="focusInput"
   >
-    <div class="overflow-y-auto h-full" ref="containerRef">
+    <div ref="containerRef" class="overflow-y-auto h-full">
       <History />
       <CommandInput ref="inputRef" :container-ref="containerRef" />
     </div>
