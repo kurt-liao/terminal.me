@@ -2,7 +2,9 @@
 
 A terminal style website. The [Nuxt3](https://v3.nuxtjs.org/) version of [m4tt72/terminal](https://github.com/m4tt72/terminal).
 
-![2022-10-21_10-02](https://user-images.githubusercontent.com/32745146/197094035-40ffcbf2-a1b2-49ca-96aa-2087ad2960f7.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/32745146/198423735-d7615739-6317-4871-ba41-ddf139f7c0d7.png" alt="me.kurtstories.com" width="800" />
+</p>
 
 ## Motivation
 
